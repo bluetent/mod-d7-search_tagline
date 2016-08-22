@@ -15,7 +15,7 @@ function search_tagline_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => 'search_tagline_admin_settings',
     'access arguments' => array('search_tagline admin'),
-    'file' => 'searc_tagline.admin.inc',
+    'file' => 'search_tagline.admin.inc',
     'type' => MENU_NORMAL_ITEM
   );
 
