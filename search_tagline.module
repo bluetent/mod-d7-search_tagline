@@ -2,3 +2,22 @@
 /**
  * @file Creates configurable block to add taglines to homepage quicksearch
  */
+
+/**
+ * Implements hook_menu().
+ */
+function search_tagline_menu() {
+  $items = array();
+
+  $item['admin/config/user-interface/search-tagline'] = array(
+    'title' => 'Search Tool Tip Config',
+    'description' => 'Configure search tagline text and options',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => 'search_tagline_admin_settings',
+    'access arguments' => array('search_tagline admin'),
+    'file' => 'searc_tagline.admin.inc',
+    'type' => MENU_NORMAL_ITEM
+  );
+
+  return $items;
+}
