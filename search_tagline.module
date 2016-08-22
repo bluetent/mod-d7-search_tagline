@@ -9,7 +9,7 @@
 function search_tagline_menu() {
   $items = array();
 
-  $item['admin/config/user-interface/search-tagline'] = array(
+  $items['admin/config/user-interface/search-tagline'] = array(
     'title' => 'Search Tagline Config',
     'description' => 'Configure search tagline text and options',
     'page callback' => 'drupal_get_form',
