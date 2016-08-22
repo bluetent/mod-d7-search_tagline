@@ -1,10 +1,10 @@
 <?php if($tagline_one || $tagline_two): ?>
   <div class="slideshow-slogan">
     <?php if($tagline_one): ?>
-      <div class="slogan-primary">Come Experience The Mountain</div>
+      <div class="slogan-primary"><?php print $tagline_one; ?></div>
     <?php endif; ?>
     <?php if($tagline_two): ?>
-      <div class="slogan-secondary">And Enjoy Personalized Service From Alta Chalets</div>
+      <div class="slogan-secondary"><?php print $tagline_two; ?></div>
     <?php endif; ?>
   </div>
   <!-- /.slideshow-slogan -->
