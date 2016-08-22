@@ -48,7 +48,7 @@ function search_tagline_block_view($delta = '') {
       $block['content'] = array(
         '#theme' => 'search_tagline',
         '#attached' => array(
-          'css' => $base_path . '/css/search_tagline.css'
+          'css' => array($base_path . '/css/search_tagline.css')
         )
       );
       break;
@@ -80,6 +80,4 @@ function search_tagline_theme() {
 function search_tagline_preprocess_search_tagline(&$variables) {
   $variables['tagline_one'] = variable_get('tagline_line_one', '');
   $variables['tagline_two'] = variable_get('tagline_line_two', '');
-
-  kpr($variables);
 }
