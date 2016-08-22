@@ -1,3 +1,76 @@
-body {
-  background: pink;
+$large-screen: emCalc(1190);
+$large-screen-down:emCalc(1189);
+$medium-screen: emCalc(1025);
+$medium-screen-down: emCalc(1024);
+$small-screen: emCalc(768);
+$small-screen-down: emCalc(767);
+$tiny-screen:emCalc(481);
+$tiny-screen-down: emCalc(480);
+
+// Auxiliary breakpoint variables.
+$screen: "only screen";
+$tiny:"only screen and (min-width:#{$tiny-screen})";
+$tiny-down: "only screen and (max-width:#{$tiny-screen-down})";
+$small: "only screen and (min-width: #{$small-screen})";
+$small-down: "only screen and (max-width:#{$small-screen-down})";
+$medium: "only screen and (min-width: #{$medium-screen})";
+$medium-down: "only screen and (max-width:#{$medium-screen-down})";
+$large: "only screen and (min-width: #{$large-screen})";
+$large-down: "only screen and (max-width:#{$large-screen-down})";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
+
+$tiny-small: "only screen and (min-width:#{$tiny-screen}) and (max-width:#{$small-screen-down})";
+$tiny-medium: "only screen and (min-width:#{$tiny-screen}) and (max-width:#{$medium-screen-down})";
+$tiny-large: "only screen and (min-width:#{$tiny-screen}) and (max-width:#{$large-screen-down})";
+$small-medium: "only screen and (min-width:#{$small-screen}) and (max-width:#{$medium-screen-down})";
+$small-large: "only screen and (min-width:#{$small-screen}) and (max-width:#{$large-screen-down})";
+$medium-large: "only screen and (min-width:#{$medium-screen}) and (max-width:#{$large-screen-down)}";
+
+$tagline-bg: #fff !default;
+$tagline-color: #666 !default;
+
+.front {
+  .block-search-tagline {
+    bottom: 0;
+    padding: 1rem 0;
+    z-index: 20;
+    width: 100%;
+    background: $tagline-bg;
+    @media #{$small} {
+    background: linear-gradient(rgba(#fff, 0) 0%, rgba(#fff, .75) 50%, rgba(#fff, 1) 100%);
+      position: absolute;
+      bottom: 130px;
+      padding: 3rem 0 1rem;
+    }
+    // Slideshow slogan
+    .slideshow-slogan {
+      [class*='slogan-'] {
+        color: $tagline-color;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+        font-style: normal;
+        line-height: 1.4;
+        text-rendering: optimizeLegibility;
+      }
+      .slogan-primary {
+        letter-spacing: .03em;
+        font-size: 1.2rem;
+        font-weight: 600;
+        @media #{$small} {
+          font-size: 1.8em;
+        }
+        margin: 0;
+      }
+      .slogan-secondary {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        @media #{$small} {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
 }
