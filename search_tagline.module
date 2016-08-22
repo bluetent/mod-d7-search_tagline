@@ -48,7 +48,7 @@ function search_tagline_block_view($delta = '') {
       $block['content'] = array(
         '#theme' => 'search_tagline',
         '#attached' => array(
-          'css' => $base_path . '/css/seach_tagline.css'
+          'css' => $base_path . '/css/search_tagline.css'
         )
       );
       break;
