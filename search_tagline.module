@@ -1,0 +1,4 @@
+<?php
+/**
+ * @file Creates configurable block to add taglines to homepage quicksearch
+ */
