@@ -10,7 +10,7 @@ function search_tagline_menu() {
   $items = array();
 
   $item['admin/config/user-interface/search-tagline'] = array(
-    'title' => 'Search Tool Tip Config',
+    'title' => 'Search Tagline Config',
     'description' => 'Configure search tagline text and options',
     'page callback' => 'drupal_get_form',
     'page arguments' => 'search_tagline_admin_settings',
@@ -20,4 +20,56 @@ function search_tagline_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function search_tagline_block_info() {
+  $block = array();
+
+  $block['search_tagline'] = array(
+    'info' => t('Search Tagline')
+  );
+
+  return $block;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function search_tagline_block_view($delta = '') {
+  $block = array();
+  $base_path = drupal_get_path('module', 'search_tagline');
+
+  switch($delta) {
+    case 'search_tagline':
+      $block['subject'] = '';
+      $block['content'] = array(
+        '#theme' => 'search_tagline',
+        '#attached' => array(
+          'css' => $base_path . '/css/seach_tagline.css'
+        )
+      );
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function search_tagline_theme() {
+  $theme = array();
+  $base_path = drupal_get_path('module', 'search_tagline');
+
+  $theme['search_tagline'] = array(
+    'renter element' => 'elements',
+    'path' => $base_path,
+    'template' => 'search_tagline'
+  );
+
+
+  return $theme;
 }

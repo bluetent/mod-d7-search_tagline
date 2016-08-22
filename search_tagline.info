@@ -2,4 +2,5 @@ name = Search Tagline
 description = Creates configurable block to add tagline to homepage quicksearch.
 core = 7.x
 version = 7.x-1.0
+project = search_tagline
 configure = admin/config/user-interface/search-tagline
