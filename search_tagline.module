@@ -65,7 +65,7 @@ function search_tagline_theme() {
   $base_path = drupal_get_path('module', 'search_tagline');
 
   $theme['search_tagline'] = array(
-    'renter element' => 'elements',
+    'render element' => 'elements',
     'path' => $base_path,
     'template' => 'search_tagline'
   );
